@@ -1,0 +1,13 @@
+E:\DotNet程序\MetroPlayer.Core\MetroPlayer.Core\bin\Debug\MetroPlayer.Core.dll
+E:\DotNet程序\MetroPlayer.Core\MetroPlayer.Core\bin\Debug\MetroPlayer.Core.pdb
+E:\DotNet程序\MetroPlayer.Core\MetroPlayer.Core\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\DotNet程序\MetroPlayer.Core\MetroPlayer.Core\bin\Debug\Id3Lib.dll
+E:\DotNet程序\MetroPlayer.Core\MetroPlayer.Core\bin\Debug\Mp3Lib.dll
+E:\DotNet程序\MetroPlayer.Core\MetroPlayer.Core\obj\Debug\MetroPlayer.Core.csprojResolveAssemblyReference.cache
+E:\DotNet程序\MetroPlayer.Core\MetroPlayer.Core\obj\Debug\MetroPlayer.Core.dll
+E:\DotNet程序\MetroPlayer.Core\MetroPlayer.Core\obj\Debug\MetroPlayer.Core.pdb
+D:\项目管理\CSharp\MetroPlayer.Core\MetroPlayer.Core\bin\Debug\程序说明.txt
+D:\项目管理\CSharp\MetroPlayer.Core\MetroPlayer.Core\bin\Debug\MetroPlayer.Core.dll
+D:\项目管理\CSharp\MetroPlayer.Core\MetroPlayer.Core\bin\Debug\MetroPlayer.Core.pdb
+D:\项目管理\CSharp\MetroPlayer.Core\MetroPlayer.Core\obj\Debug\MetroPlayer.Core.dll
+D:\项目管理\CSharp\MetroPlayer.Core\MetroPlayer.Core\obj\Debug\MetroPlayer.Core.pdb

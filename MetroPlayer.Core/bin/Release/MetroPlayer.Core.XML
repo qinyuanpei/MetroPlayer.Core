@@ -1,0 +1,966 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MetroPlayer.Core</name>
+    </assembly>
+    <members>
+        <member name="T:MetroPlayer.Core.Analyzer.AnalyzerType">
+            <summary>
+            用户喜好分析器类型枚举：根据喜欢度排序、根据收听次数排序、总体排序
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Analyzer.AnalyzerType.Like">
+            <summary>
+            喜欢度排序
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Analyzer.AnalyzerType.Listen">
+            <summary>
+            听过次数排序
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Analyzer.AnalyzerType.Total">
+            <summary>
+            总体排序
+            </summary>
+        </member>
+        <member name="T:MetroPlayer.Core.Analyzer.BehaveAnalyzer">
+            <summary>
+            基于用户行为的歌曲分析
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.Analyzer.BehaveAnalyzer.SetLikeByListen(System.String,System.String,System.Double)">
+            <summary>
+            根据用户听歌时间的长短进行喜欢度分析
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:MetroPlayer.Core.Analyzer.BehaveAnalyzer.GetLikeByMatchine">
+            <summary>
+            基于网络推荐模式的歌曲算法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MetroPlayer.Core.Base.MusicFormat">
+            <summary>
+            定义音乐格式的枚举
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Base.MusicFormat.Mp3">
+            <summary>
+            Mp3格式
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Base.MusicFormat.Ogg">
+            <summary>
+            Ogg格式
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Base.MusicFormat.Wav">
+            <summary>
+            Wav格式
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Base.MusicFormat.PCM">
+            <summary>
+            PCM格式
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Base.MusicFormat.Flac">
+            <summary>
+            Flac格式
+            </summary>
+        </member>
+        <member name="T:MetroPlayer.Core.Config.PlayerConfig">
+            <summary>
+            封装了相关配置的方法
+            </summary>
+        </member>
+        <member name="T:MetroPlayer.Core.Config.ConfigBase">
+            <summary>
+            配置文件读写基类
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.Config.ConfigBase.GetPrivateProfileString(System.String,System.String,System.String,System.Text.StringBuilder,System.Int32,System.String)">
+            <summary>
+            API调用,目的是实现对ini文件的读写操作
+            </summary>
+            <param name="lpAppName">欲在其中查找关键字的节点名称</param>
+            <param name="lpKeyName">欲获取的项名</param>
+            <param name="lpDefault">指定的项没有找到时返回的默认值</param>
+            <param name="lpReturnedString">指定一个字串缓冲区，长度至少为nSize</param>
+            <param name="nSize">指定装载到lpReturnedString缓冲区的最大字符数量</param>
+            <param name="lpFileName">INI文件名</param>
+            <returns>复制到lpReturnedString缓冲区的字节数量，其中不包括那些NULL中止字符</returns>
+        </member>
+        <member name="M:MetroPlayer.Core.Config.ConfigBase.GetValue(System.String,System.String,System.String,System.String)">
+            <summary>
+            读取指定节点的内值
+            </summary>
+            <param name="section">INI节点</param>
+            <param name="key">节点下的项</param>
+            <param name="def">没有找到内容时返回的默认值</param>
+            <param name="def">要读取的INI文件</param>
+            <returns>读取的节点内容</returns>
+        </member>
+        <member name="M:MetroPlayer.Core.Config.ConfigBase.SetValue(System.String,System.String,System.String,System.String)">
+            <summary>
+            修改指定节点的值
+            </summary>
+            <param name="lpApplicationName">欲在其中写入的节点名称</param>
+            <param name="lpKeyName">欲设置的项名</param>
+            <param name="lpString">要写入的新字符串</param>
+            <param name="lpFileName">INI文件名</param>
+            <returns>非零表示成功，零表示失败</returns>
+        </member>
+        <member name="T:MetroPlayer.Core.Lrc.Lrc">
+            <summary>
+            提供同步歌词和桌面歌词的支持
+            作者：秦元培
+            时间：2014年2月1日
+            更新：
+            
+            </summary>
+            <summary>
+            歌词类
+            </summary>
+        </member>
+        <member name="T:MetroPlayer.Core.Base.Music">
+            <summary>
+            基础数据结构类
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.Base.Music.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.Base.Music.#ctor(System.String,System.String,System.Int32,System.Int32,MetroPlayer.Core.Base.MusicType)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="Title">歌曲标题</param>
+            <param name="Url">歌曲路径</param>
+            <param name="Like">喜欢次数</param>
+            <param name="Listen">收听次数</param>
+            <param name="Type">歌曲类型</param>
+        </member>
+        <member name="P:MetroPlayer.Core.Base.Music.Title">
+            <summary>
+            歌曲标题
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Base.Music.Url">
+            <summary>
+            歌曲路径
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Base.Music.Like">
+            <summary>
+            喜欢次数
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Base.Music.Listen">
+            <summary>
+            收听次数
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Base.Music.Type">
+            <summary>
+            歌曲类型
+            </summary>
+        </member>
+        <member name="T:MetroPlayer.Core.Base.MusicType">
+            <summary>
+            定义歌曲类型
+            </summary>
+        </member>
+        <member name="T:MetroPlayer.Core.MPlayer.MPlayer">
+            <summary>
+            基于MCI接口的播放器类，目前仅支持mp3和wav两种格式的文件
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.MPlayer.MPlayer.#ctor">
+            <summary>
+            MPlayer构造函数
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.MPlayer.MPlayer.InitDevice">
+            <summary>
+            设备初始化
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.MPlayer.MPlayer.GetDeviceID(System.String)">
+            <summary>
+            获取设备ID
+            </summary>
+            <param name="Url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MetroPlayer.Core.MPlayer.MPlayer.GetFileUrl(System.String)">
+            <summary>
+            获取当前路径
+            </summary>
+            <param name="FileName">文件</param>
+            <returns></returns>
+        </member>
+        <member name="M:MetroPlayer.Core.MPlayer.MPlayer.IsReady">
+            <summary>
+            设备是否准备就绪
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MetroPlayer.Core.MPlayer.MPlayer.Play">
+            <summary>
+            播放
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.MPlayer.MPlayer.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.MPlayer.MPlayer.Puase">
+            <summary>
+            暂停
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.MPlayer.MPlayer.Resume">
+            <summary>
+            恢复播放
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.MPlayer.MPlayer.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="T:MetroPlayer.Core.MPlayer.PlayState">
+            <summary>
+            定义播放器状态枚举变量
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.MPlayer.PlayState.Playing">
+            <summary>
+            播放
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.MPlayer.PlayState.Puased">
+            <summary>
+            暂停
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.MPlayer.PlayState.Stopped">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="T:MetroPlayer.Core.MPlayer.WAPI">
+            <summary>
+            调用系统API
+            </summary>
+        </member>
+        <member name="T:MetroPlayer.Core.PlayList.SQLitePlayList">
+            <summary>
+            提供对播放列表的管理支持，此类由SQLite构建
+            </summary>
+        </member>
+        <member name="T:MetroPlayer.Core.PlayList.XmlPlayList">
+            <summary>
+            提供对播放列表的支持，本类基于Xml构建
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.PlayList.XmlPlayList.XmlFilePath">
+            <summary>
+            Xml文件路径
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.PlayList.XmlPlayList.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="XmlFilePath"></param>
+        </member>
+        <member name="M:MetroPlayer.Core.PlayList.XmlPlayList.CreatNewFile">
+            <summary>
+            当文件不存在时，创建新的播放列表文件
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.PlayList.XmlPlayList.GetMusics">
+            <summary>
+            返回全部的歌曲
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MetroPlayer.Core.PlayList.XmlPlayList.GetMusics(MetroPlayer.Core.Analyzer.AnalyzerType)">
+            <summary>
+            返回经过排序后的歌曲
+            </summary>
+            <param name="Type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MetroPlayer.Core.PlayList.XmlPlayList.AddMusic(System.String,System.String,MetroPlayer.Core.Base.MusicType)">
+            <summary>
+            添加音乐
+            </summary>
+            <param name="Title">标题</param>
+            <param name="Url">地址</param>
+            <param name="Type">类型</param>
+        </member>
+        <member name="M:MetroPlayer.Core.PlayList.XmlPlayList.DeleteMusic(System.String,System.String)">
+            <summary>
+            删除根据满足某个节点值条件的歌曲
+            </summary>
+            <param name="Value"></param>
+        </member>
+        <member name="M:MetroPlayer.Core.PlayList.XmlPlayList.ModifyMusic(System.String,System.String,System.Int32)">
+            <summary>
+            修改某一首歌的节点值
+            </summary>
+            <param name="Title">标题</param>
+            <param name="ElementName">节点名</param>
+            <param name="ElementValue">修改值</param>
+        </member>
+        <member name="M:MetroPlayer.Core.PlayList.XmlPlayList.GetMusic(System.String)">
+            <summary>
+            返回指定歌曲名称的Music
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MetroPlayer.Core.PlayList.XmlPlayList.GetTitles">
+            <summary>
+            返回全部的歌曲Title
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MetroPlayer.Core.Analyzer.LikeAnalyzer">
+            <summary>
+            基于歌曲喜欢度的机器分析方法
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Analyzer.LikeAnalyzer.Musics">
+            <summary>
+            私有字段Musics
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.Analyzer.LikeAnalyzer.#ctor(MetroPlayer.Core.PlayList.XmlPlayList)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="PlayList">播放列表</param>
+        </member>
+        <member name="M:MetroPlayer.Core.Analyzer.LikeAnalyzer.SortByLike">
+            <summary>
+            根据喜欢度排序
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MetroPlayer.Core.Analyzer.ListenAnalyzer">
+            <summary>
+            基于歌曲收听次数的机器分析
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Analyzer.ListenAnalyzer.Musics">
+            <summary>
+            私有字段Musics
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.Analyzer.ListenAnalyzer.#ctor(MetroPlayer.Core.PlayList.XmlPlayList)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="PlayList">播放列表</param>
+        </member>
+        <member name="M:MetroPlayer.Core.Analyzer.ListenAnalyzer.SortByListen">
+            <summary>
+            根据收听次数排序
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MetroPlayer.Core.Analyzer.TotalAnalyzer">
+            <summary>
+            机器综合分析
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Analyzer.TotalAnalyzer.Musics">
+            <summary>
+            私有字段Musics
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.Analyzer.TotalAnalyzer.#ctor(MetroPlayer.Core.PlayList.XmlPlayList)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="PlayList">播放列表</param>
+        </member>
+        <member name="M:MetroPlayer.Core.Analyzer.TotalAnalyzer.SortByTotal">
+            <summary>
+            综合排序
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MetroPlayer.Core.Search.ChannelSong">
+            <summary>
+            歌曲类,提供豆瓣音乐的信息实体描述
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Search.ChannelSong.Picture">
+            <summary>
+            封面图片
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Search.ChannelSong.AlbumTitle">
+            <summary>
+            唱片标题
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Search.ChannelSong.Album">
+            <summary>
+            唱片路径
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Search.ChannelSong.Company">
+            <summary>
+            发行公司
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Search.ChannelSong.Rating">
+            <summary>
+            平均评分
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Search.ChannelSong.PublicTime">
+            <summary>
+            发行时间
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Search.ChannelSong.Ssid">
+            <summary>
+            不知道是什么东西的ID
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Search.ChannelSong.Like">
+            <summary>
+            当前用户是否喜欢
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Search.ChannelSong.Artist">
+            <summary>
+            歌手
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Search.ChannelSong.Url">
+            <summary>
+            歌曲路径
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Search.ChannelSong.Title">
+            <summary>
+            歌曲名称
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Search.ChannelSong.SubType">
+            <summary>
+            普通音乐应该是""，广告应该是"T"
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Search.ChannelSong.SongID">
+            <summary>
+            歌曲ID
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Search.ChannelSong.Length">
+            <summary>
+            不知道是什么东西的长度
+            </summary>
+        </member>
+        <member name="P:MetroPlayer.Core.Search.ChannelSong.AlbumID">
+            <summary>
+            专辑ID
+            </summary>
+        </member>
+        <member name="T:MetroPlayer.Core.Search.DouBanHelper">
+            <summary>
+            本类为豆瓣电台的API接口，可以提供公共频道的音乐资源
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.Search.DouBanHelper.getChannelSong(MetroPlayer.Core.Search.DouBanHelper.Channel)">
+            <summary>
+            根据返回的json解析指定频道的歌曲列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MetroPlayer.Core.Search.DouBanHelper.Channel">
+            <summary>
+            豆瓣音乐频道描述类
+            </summary>
+        </member>
+        <member name="T:MetroPlayer.Core.Search.SearchHelper">
+            <summary>
+            在线搜索辅助类
+            本搜索辅助类调用了百度音乐未公开的API接口，可以通过搜索获得歌曲的下载地址和歌词的下载地址
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.Search.SearchHelper.SearchLrc(System.String)">
+            <summary>
+            搜索歌词的方法
+            </summary>
+            <param name="mTitle">歌曲名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:MetroPlayer.Core.Search.SearchHelper.Search(System.String)">
+            <summary>
+            搜索音乐的方法
+            </summary>
+            <param name="mTitle">歌曲名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:MetroPlayer.Core.Search.SearchResult">
+            <summary>
+            描述搜索结果的类
+            </summary>
+        </member>
+        <member name="T:MetroPlayer.Core.Tag.TagHelper">
+            <summary>
+            基于开源Net音频标签库的Mp3标签操作类
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Tag.TagHelper.Tag_Title">
+            <summary>
+            Title
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Tag.TagHelper.Tag_Author">
+            <summary>
+            Author
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Tag.TagHelper.Tag_Album">
+            <summary>
+            Album
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Tag.TagHelper.Tag_Picture">
+            <summary>
+            Picture
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Tag.TagHelper.Tag_Year">
+            <summary>
+            Year
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Tag.TagHelper.Tag_Track">
+            <summary>
+            Track
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Tag.TagHelper.Tag_Comment">
+            <summary>
+            Comment
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Tag.TagHelper.Tag_Composer">
+            <summary>
+            Composer
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Tag.TagHelper.Tag_Length">
+            <summary>
+            Length
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Tag.TagHelper.mFileName">
+            <summary>
+            Mp3文件路径
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Tag.TagHelper.mMp3File">
+            <summary>
+            Mp3File
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.Tag.TagHelper.mHandler">
+            <summary>
+            TagHandler
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.Tag.TagHelper.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="mFileName">Mp3文件路径</param>
+        </member>
+        <member name="M:MetroPlayer.Core.Tag.TagHelper.GetTagByName(System.String)">
+            <summary>
+            根据标签名返回标签值
+            </summary>
+            <param name="mTagName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MetroPlayer.Core.Tag.TagHelper.updateTagByName(System.String)">
+            <summary>
+            暂时无法实现此方法
+            </summary>
+            <param name="mTagName"></param>
+        </member>
+        <member name="T:MetroPlayer.Core.ZPlayer.Convertor">
+            <summary>
+            本类为转换工具类，提供C++到C#的类型转换
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.Convertor.ConvertTStreamTimeToString(MetroPlayer.Core.ZPlayer.LibZPlay.TStreamTime)">
+            <summary>
+            将一个TStreamTime类型转换为字符串
+            </summary>
+            <param name="mTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.Convertor.ConvertIntToTStreamTime(System.Int32)">
+            <summary>
+            将一个int类型转化为TStreamTime
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.Convertor.ConvertTStreamTimeToInt(MetroPlayer.Core.ZPlayer.LibZPlay.TStreamTime)">
+            <summary>
+            将一个TStreamTime转化为int类型
+            </summary>
+            <param name="mTime"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MetroPlayer.Core.ZPlayer.Equalizer">
+            <summary>
+            本类为播放器的均衡器音效类，在这里我们定义下面的音效类型：
+            1、Bruce：布鲁斯
+            2、Classic：古典
+            3、Country：乡村
+            4、Dance：舞曲
+            5、Jazz：爵士
+            6、Electric 电子乐
+            7、Pass：怀旧
+            8、Opera：歌剧
+            9、Rock：摇滚
+            10、Voice：人声
+            11、Auto：自动匹配
+            我们将频率波段分为-12db到+12db，设某一波段对应的范围为[a,b]，则该波段的中值为(a+b)/2。
+            此时，该波段范围内的值可以表示为：(a+b)/2+x*(100/24)，其中x为-12db到+12db范围内的任意一个整数
+            </summary>
+            
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.DefaultBand">
+            <summary>
+            定义均衡器默认的频率波段
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.Equalizer.GetBandMidValue">
+            <summary>
+            获得各个波段的中值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.Bruce">
+            <summary>
+            布鲁斯音效频率设定
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.Classic">
+            <summary>
+            古典音效频率设定
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.Country">
+            <summary>
+            乡村音效频率设定
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.Dance">
+            <summary>
+            舞曲音效频率设定
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.Jazz">
+            <summary>
+            爵士音效频率设定
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.Electric">
+            <summary>
+            电子乐音效频率设定
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.Pass">
+            <summary>
+            怀旧音效频率设定
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.Opera">
+            <summary>
+            歌剧音效频率设定
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.Rock">
+            <summary>
+            摇滚音效频率设定
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.Voice">
+            <summary>
+            人声音效频率设定
+            </summary>
+            
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.Auto">
+            <summary>
+            自动匹配效频率设定
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.Equalizer.GetEqulizerBandValue(MetroPlayer.Core.ZPlayer.Equalizer.EqualizerType)">
+            <summary>
+            获取指定类型的EQ特效参数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MetroPlayer.Core.ZPlayer.Equalizer.EqualizerType">
+            <summary>
+            定义均衡器预设枚举
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.EqualizerType.Bruce">
+            <summary>
+            布鲁斯
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.EqualizerType.Classic">
+            <summary>
+            古典
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.EqualizerType.Country">
+            <summary>
+            乡村
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.EqualizerType.Dance">
+            <summary>
+            舞曲
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.EqualizerType.Jazz">
+            <summary>
+            爵士
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.EqualizerType.Electric">
+            <summary>
+            电子乐
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.EqualizerType.Pass">
+            <summary>
+            怀旧
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.EqualizerType.Opera">
+            <summary>
+            歌剧
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.EqualizerType.Rock">
+            <summary>
+            摇滚
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.EqualizerType.Voice">
+            <summary>
+            人声
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.Equalizer.EqualizerType.Auto">
+            <summary>
+            自动
+            </summary>
+        </member>
+        <member name="T:MetroPlayer.Core.ZPlayer.PlayState">
+            <summary>
+            这里定义播放器的三种状态
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.PlayState.mPlay">
+            <summary>
+            播放
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.PlayState.mPause">
+            <summary>
+            暂停
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.PlayState.mStop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="T:MetroPlayer.Core.ZPlayer.ZPlayer">
+            <summary>
+            基于LibZPlay封装的ZPlayer
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.ZPlayer.mInstance">
+            <summary>
+            ZPlayer实例
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.ZPlayer.mZPlay">
+            <summary>
+            ZPlay
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.ZPlayer.mStatus">
+            <summary>
+            播放器状态
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.ZPlayer.mPosition">
+            <summary>
+            播放器进度
+            </summary>
+        </member>
+        <member name="F:MetroPlayer.Core.ZPlayer.ZPlayer.mInfo">
+            <summary>
+            歌曲信息
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.getInstance">
+            <summary>
+            单例模式下的获取ZPlayer的方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.Play">
+            <summary>
+            播放音乐的方法
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.SetResource(System.String)">
+            <summary>
+            设置音乐资源
+            </summary>
+            <param name="mFileName">文件路径</param>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.Stop">
+            <summary>
+            停止音乐的方法
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.Pause">
+            <summary>
+            暂停音乐的方法
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.Resume">
+            <summary>
+            恢复音乐的方法                                                                     
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.SeekForward(System.Int32)">
+            <summary>
+            定位向前播放方法
+            </summary>
+            <param name="mTime"></param>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.SeekBackward(System.Int32)">
+            <summary>
+            定位向后播放方法
+            </summary>
+            <param name="mTime"></param>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.SetPlayerVolume(System.Int32,System.Int32)">
+            <summary>
+            设置播放器声音大小其值介于0到100之间
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.SetOutputVolume(System.Int32,System.Int32)">
+            <summary>
+            设置设备声音大小其值介于0到100之间
+            </summary>
+            <param name="mLValue"></param>
+            <param name="mRValue"></param>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.SetEqualizer(MetroPlayer.Core.ZPlayer.Equalizer.EqualizerType)">
+            <summary>
+            设置均衡器效果
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.EnableEqualizer(System.Boolean)">
+            <summary>
+            是否启用均衡器效果
+            </summary>
+            <param name="isEqualizer"></param>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.GetStatus">
+            <summary>
+            返回播放器状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.GetPositionString">
+            <summary>
+            返回播放器的当前字符型时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.GetPosition">
+            <summary>
+            返回播放器的当前整型时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.GetBitrate">
+            <summary>
+            返回比特率
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.GetDuration">
+            <summary>
+            返回歌曲整型总长度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.GetDurationString">
+            <summary>
+            返回当前歌曲字符型总长度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.SetRate(System.Int32)">
+            <summary>
+            设置歌曲速率正常值为100
+            </summary>
+            <param name="mRate"></param>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.DrawSoundWavGraphics">
+            <summary>
+            绘制声波图像
+            </summary>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.GetMusicFormat(System.String)">
+            <summary>
+            返回某个音乐文件的格式
+            </summary>
+            <param name="mFileName">文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:MetroPlayer.Core.ZPlayer.ZPlayer.MixSound(System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            音乐混音其值介于0到100之间
+            </summary>
+        </member>
+    </members>
+</doc>

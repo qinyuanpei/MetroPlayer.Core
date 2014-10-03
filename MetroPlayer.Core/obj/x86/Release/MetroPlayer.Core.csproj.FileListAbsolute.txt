@@ -1,0 +1,8 @@
+D:\项目管理\CSharp\MetroPlayer.Core\MetroPlayer.Core\bin\x86\Release\MetroPlayer.Core.dll
+D:\项目管理\CSharp\MetroPlayer.Core\MetroPlayer.Core\bin\x86\Release\MetroPlayer.Core.pdb
+D:\项目管理\CSharp\MetroPlayer.Core\MetroPlayer.Core\bin\x86\Release\MetroPlayer.Core.XML
+D:\项目管理\CSharp\MetroPlayer.Core\MetroPlayer.Core\bin\x86\Release\ICSharpCode.SharpZipLib.dll
+D:\项目管理\CSharp\MetroPlayer.Core\MetroPlayer.Core\bin\x86\Release\ID3Lib.dll
+D:\项目管理\CSharp\MetroPlayer.Core\MetroPlayer.Core\bin\x86\Release\MP3Lib.dll
+D:\项目管理\CSharp\MetroPlayer.Core\MetroPlayer.Core\obj\x86\Release\MetroPlayer.Core.dll
+D:\项目管理\CSharp\MetroPlayer.Core\MetroPlayer.Core\obj\x86\Release\MetroPlayer.Core.pdb

@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroPlayer.Core", "MetroPlayer.Core\MetroPlayer.Core.csproj", "{3394B0F0-B1B6-46A2-88F8-45C6EA6FF52A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3394B0F0-B1B6-46A2-88F8-45C6EA6FF52A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3394B0F0-B1B6-46A2-88F8-45C6EA6FF52A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3394B0F0-B1B6-46A2-88F8-45C6EA6FF52A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3394B0F0-B1B6-46A2-88F8-45C6EA6FF52A}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{3394B0F0-B1B6-46A2-88F8-45C6EA6FF52A}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{3394B0F0-B1B6-46A2-88F8-45C6EA6FF52A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{3394B0F0-B1B6-46A2-88F8-45C6EA6FF52A}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{3394B0F0-B1B6-46A2-88F8-45C6EA6FF52A}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{3394B0F0-B1B6-46A2-88F8-45C6EA6FF52A}.Release|Mixed Platforms.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
