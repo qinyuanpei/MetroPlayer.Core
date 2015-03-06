@@ -2,6 +2,12 @@ MetroPlayer.Core
 ================
 MertroPlayer是一个基于C#语言的开源音乐播放器
 
+![1](http://7wy477.com1.z0.glb.clouddn.com/qinyuanpei_imgs_1.png)
+
+![2](http://7wy477.com1.z0.glb.clouddn.com/qinyuanpei_imgs_2.png)
+
+![3](http://7wy477.com1.z0.glb.clouddn.com/qinyuanpei_imgs_3.png)
+
 本项目是对该播放器的内核进行优化后所开发的一个播放器库
 
 您可以基于本项目构建属于自己的音乐播放器
